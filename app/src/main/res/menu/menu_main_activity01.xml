@@ -3,16 +3,27 @@
     xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity01">
     <item
         android:id="@+id/mni_new"
+        android:checkable="false"
         android:enabled="true"
         android:orderInCategory="90"
         android:title="@string/btnNew"
         android:visible="true"
         app:showAsAction="never" />
     <item
-        android:id="@+id/mni_about"
+        android:id="@+id/mni_close"
+        android:checkable="false"
+        android:enabled="true"
         android:orderInCategory="95"
+        android:title="@string/btnClose"
+        android:visible="true" />
+    <item
+        android:id="@+id/mni_about"
+        android:checkable="false"
+        android:enabled="true"
+        android:orderInCategory="96"
         android:title="@string/btnAbout"
-        app:showAsAction="never"/>
+        android:visible="true"
+        app:showAsAction="never" />
     <!--item android:id="@+id/mni_5rivers" android:title="@string/mni_5rivers"
         android:orderInCategory="95" app:showAsAction="ifRoom" /-->
     <!--item android:id="@+id/mni_toggle_animation" android:title="@string/mni_toggle_animation"

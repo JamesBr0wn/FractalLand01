@@ -138,6 +138,11 @@ public class MainActivity01 extends AppCompatActivity {
         }
         if (id == R.id.mni_about) {
             showPopup();
+            return true;
+        }
+        if (id == R.id.mni_close) {
+            this.finishAffinity();
+            return true;
         }
         /*
         //noinspection SimplifiableIfStatement

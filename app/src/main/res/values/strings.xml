@@ -8,6 +8,7 @@
     <string name="btnNew">New&#8230;</string>
     <string name="btnAbout">About&#8230;</string>
     <string name="btnAboutClose">Close</string>
+    <string name="btnClose">Close App</string>
     <string name="txtAbout">Graphics demo written by DK</string>
     <string name="lblCurrentDetail">Current Detail Level</string>
     <string name="lblCurrentDetailNr">Current Detail Level %1$s of max. %2$s</string>
