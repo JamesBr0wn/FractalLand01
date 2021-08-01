@@ -1,11 +1,14 @@
 package com.diudkr.fractalland01;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 import androidx.core.view.GestureDetectorCompat;
 // import android.support.v7.app.ActionBarActivity;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Environment;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.Gravity;
@@ -18,6 +21,9 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
+
+import java.io.File;
+import java.io.FileOutputStream;
 
 public class MainActivity01 extends AppCompatActivity {
 
@@ -140,6 +146,10 @@ public class MainActivity01 extends AppCompatActivity {
             showPopup();
             return true;
         }
+        if (id == R.id.mni_screenshot) {
+            this.makeScreenshot();
+            return true;
+        }
         if (id == R.id.mni_close) {
             this.finishAffinity();
             return true;
@@ -168,6 +178,31 @@ public class MainActivity01 extends AppCompatActivity {
         */
 
         return super.onOptionsItemSelected(item);
+    }
+
+    void makeScreenshot() {
+        Log.i("diudkr", "MainActivity01.makeScreenshot1");
+        View rootView = getWindow().getDecorView().findViewById(android.R.id.content);
+        Log.i("diudkr", "MainActivity01.makeScreenshot2 " + rootView);
+        View screenView = rootView.getRootView();
+        Log.i("diudkr", "MainActivity01.makeScreenshot3 " + screenView);
+        screenView.setDrawingCacheEnabled(true);
+        Bitmap bitmap = Bitmap.createBitmap(screenView.getDrawingCache());
+        Log.i("diudkr", "MainActivity01.makeScreenshot4 " + bitmap);
+        screenView.setDrawingCacheEnabled(false);
+        // write
+        // String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Screenshots";
+        File file = new File(getExternalFilesDir(null), "DemoFile.png");
+        Log.i("diudkr", "MainActivity01.makeScreenshot5 " + file.getAbsolutePath());
+        try {
+            FileOutputStream fOut = new FileOutputStream(file);
+            bitmap.compress(Bitmap.CompressFormat.PNG, 85, fOut);
+            fOut.flush();
+            fOut.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Log.i("diudkr", "MainActivity01.makeScreenshot6 ");
     }
 
     void showPopup() {

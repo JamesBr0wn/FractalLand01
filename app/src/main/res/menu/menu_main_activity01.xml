@@ -17,6 +17,13 @@
         android:title="@string/btnClose"
         android:visible="true" />
     <item
+        android:id="@+id/mni_screenshot"
+        android:checkable="false"
+        android:enabled="true"
+        android:orderInCategory="95"
+        android:title="@string/btnScreenshot"
+        android:visible="true" />
+    <item
         android:id="@+id/mni_about"
         android:checkable="false"
         android:enabled="true"
