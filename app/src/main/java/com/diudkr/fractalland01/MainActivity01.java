@@ -186,10 +186,12 @@ public class MainActivity01 extends AppCompatActivity {
         Log.i("diudkr", "MainActivity01.makeScreenshot2 " + rootView);
         View screenView = rootView.getRootView();
         Log.i("diudkr", "MainActivity01.makeScreenshot3 " + screenView);
+        Boolean oldcachestate = screenView.isDrawingCacheEnabled();
+        Log.i("diudkr", "MainActivity01.makeScreenshot3.5 isDrawingCacheEnabled() = " + oldcachestate);
         screenView.setDrawingCacheEnabled(true);
         Bitmap bitmap = Bitmap.createBitmap(screenView.getDrawingCache());
         Log.i("diudkr", "MainActivity01.makeScreenshot4 " + bitmap);
-        screenView.setDrawingCacheEnabled(false);
+        screenView.setDrawingCacheEnabled(oldcachestate);
         // write
         // String dirPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Screenshots";
         File file = new File(getExternalFilesDir(null), "DemoFile.png");

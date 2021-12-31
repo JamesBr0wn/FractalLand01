@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Fractal Lands 1 0.20 d 04</string>
+    <string name="app_name">Fractal Lands 1 0.20 d 06</string>
     <string name="mni_toggle_animation">Toggle Animation</string>
     <string name="mni_inc_detail">Increase Detail Level</string>
     <string name="mni_dec_detail">Decrease Detail Level</string>
